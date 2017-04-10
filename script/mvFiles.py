@@ -17,6 +17,11 @@ dir_prefix=today+'_back'
 min_files_size=2
 if len(sys.argv) < 2 :
     print 'python mvFiles.py [DIR]'
+    print '''
+    Goal:
+        list dir's ext and mkdir for ext
+        move same ext to ext dir
+    '''
     exit()
 rootdir=sys.argv[1]
 
