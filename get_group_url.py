@@ -1,17 +1,20 @@
 # coding=utf-8
 import os
 import sys
+
+mode_msg = '''
+    0 normal
+    1 print sitename group delimiter
+    2 print sitename group delimiter with url count
+'''
+if len(sys.argv) < 2:
+    print("python "+sys.argv[0]+" [bkfile]")
+    print(mode_msg)
+    exit()
+
 f = open(sys.argv[1])
 L = [l.strip() for l in f]
 L = list(set(L))
-mode_msg = '''
-0 normal
-1 print sitename group delimiter
-'''
-if len(sys.argv) < 1:
-    print("python "+sys.argv[0]+"[bkfile]")
-    print(mode_msg)
-    exit()
 
 
 mode = 0
@@ -40,5 +43,9 @@ for k, v in sorted(list(url_group.items()), key=lambda d: len(d[1]), reverse=Tru
     if mode == 1:
         if len(v) > 2:
             print("## "+k)
+    elif mode == 2:
+        if len(v) > 2:
+            print("## %s %d" % (k, len(v)))
+
     for vv in v:
         print(vv)
