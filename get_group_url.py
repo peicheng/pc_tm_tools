@@ -17,7 +17,7 @@ L = [l.strip() for l in f]
 L = list(set(L))
 
 
-mode = 0
+mode = 2
 if len(sys.argv) == 3:
     mode = int(sys.argv[2])
 
@@ -44,7 +44,7 @@ for k, v in sorted(list(url_group.items()), key=lambda d: len(d[1]), reverse=Tru
         if len(v) > 2:
             print("## "+k)
     elif mode == 2:
-        if len(v) > 2:
+        if len(v) >= 2:
             print("## %s %d" % (k, len(v)))
 
     for vv in v:
