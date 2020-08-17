@@ -8,7 +8,7 @@ mode_msg = '''
     2 print sitename group delimiter with url count
 '''
 if len(sys.argv) < 2:
-    print("python "+sys.argv[0]+" [bkfile]")
+    print("python " + sys.argv[0] + " [bkfile]")
     print(mode_msg)
     exit()
 
@@ -26,7 +26,10 @@ def get_sitename(l):
     if 'http' not in l:
         return ''
     line = l.split('http')
-    return line[1].split('/')[2]
+    try:
+        return line[1].split('/')[2]
+    except Exception:
+        return ''
 
 
 url_group = {}
@@ -42,7 +45,7 @@ for k, v in sorted(list(url_group.items()), key=lambda d: len(d[1]), reverse=Tru
     # print k,len(v)
     if mode == 1:
         if len(v) > 2:
-            print("## "+k)
+            print("## " + k)
     elif mode == 2:
         if len(v) >= 2:
             print("## %s %d" % (k, len(v)))
