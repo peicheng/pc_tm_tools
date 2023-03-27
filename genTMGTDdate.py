@@ -48,7 +48,7 @@ for i in range(1, monthday+1):
     if mode == '2':
         L.append('GTD '+'{}.{}.'.format(prefixstr[2:4],prefixstr[4:6])+str(i).zfill(2)+' '+str(startchtweek+1))
     else:
-        L.append(prefixstr+str(i).zfill(2)+' ('+chtweeklist[startchtweek]+str(startchtweek))
+        L.append(prefixstr + str(i).zfill(2) + ' (' + chtweeklist[startchtweek])
     startchtweek = startchtweek + 1
     # print(startchtweek)
 if reverse_flag:
