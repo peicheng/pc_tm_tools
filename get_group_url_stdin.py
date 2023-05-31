@@ -64,6 +64,6 @@ for k, v in sorted(list(url_group.items()), key=lambda d: len(d[1]), reverse=Tru
         if mode == 3 and len(v) < 2:
             non_group_list.append(vv)
         else:
-            print(vv)
+            print(vv+"  ")
 
 # print(non_group_list[:2])

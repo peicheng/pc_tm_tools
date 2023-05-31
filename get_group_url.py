@@ -51,4 +51,4 @@ for k, v in sorted(list(url_group.items()), key=lambda d: len(d[1]), reverse=Tru
             print("## %s %d" % (k, len(v)))
 
     for vv in v:
-        print(vv)
+        print(vv+"  ")
